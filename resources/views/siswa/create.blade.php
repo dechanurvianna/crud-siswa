@@ -9,15 +9,15 @@
     <h1>Halaman Tambah Siswa</h1>
     <h1>Tambah Data Siswa</h1>
     <a href="/">Kembali</a>
-    <form action="/siswa/store" method="post">
+    <form action="/siswa/store" method="post" enctype="multipart/form-data">
     @csrf
 <br>
     <label for="">Kelas</label>
     <br>
     <select name="kelas_id">
-        <option value="1">XII PPLG 1</option>
-        <option value="2">XII PPLG 2</option>
-        <option value="3">XII PPLG 3</option>
+        @foreach ($clases as $clas )
+        <option value="{{ $clas->id }}">{{ $clas->name }}</option>
+        @endforeach
 </select><br>
 @error('kelas_id')
     <email style="color:red">{{ $message }}</email>
