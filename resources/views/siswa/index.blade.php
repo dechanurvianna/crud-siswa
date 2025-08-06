@@ -14,23 +14,28 @@
                 <tr>
                     <th>Foto</th>
                     <th>Name</th>
+                    <th>Nisn</th>
                     <th>Alamat</th>
                     <th>Kelas</th>
-                    <th>option</th>
+                    <th colspan="3">option</th>
 </tr>
 </thead>
 </body>
+    @foreach ($siswas as $siswa )
     <tr>
-        <td>Fot.jpg</td>
-        <td>Decha</td>
-        <td>XI PPLG 2</td>
-        <td>Jl. abcd</td>
-        <td class="option-likns">
+        <td><img src="{{asset('storage/'.$siswa->photo) }}" alt="" width="40"></td>
+        <td>{{ $siswa->name }}</td>
+        <td>{{ $siswa->nisn }}</td>
+        <td>{{ $siswa->clas->name }}</td>
+        <td>{{ $siswa->alamat }}</td>
+        <td class="option links">
             <a href="#">Hapus</a>
             <a href="#">Edit</a>
             <a href="#">Detail</a>
-</td>
-</td>
+    </td>
+</tr>
+        @endforeach
+</tr>
 <tbody>
 </table>
 </div>

@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class SiswaController extends Controller
 {
     public function index() {
-        return view('siswa.index');
+        $siswas = User::all();
+        return view('siswa.index', compact('siswas'));
     }
     public function create() {
         $clases = Clas::all();
