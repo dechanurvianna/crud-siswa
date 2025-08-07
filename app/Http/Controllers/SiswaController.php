@@ -6,6 +6,7 @@ use App\Models\Clas;
 use App\Models\User;
 use App\Models\Class;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SiswaController extends Controller
 {
@@ -49,5 +50,19 @@ class SiswaController extends Controller
         // arahkan user ke halaman beranda
          return redirect('/');
 
+    }
+    //fungsi delete siswa
+    public function destroy($id){
+    //cari user di dalam database berdasarkan id yang di kirimkan
+    $datauser = user::find($id);
+
+    //lakukan delete pada data tersebut jika data user tersebut ada
+    if($datauser != null) {
+        Storage::disk('public')->delete($datauser->photo);
+        $datauser->delete();
+    }
+
+    //kemblikan user ke halaman beranda / home
+    return redirect('/');
     }
 }
