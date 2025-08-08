@@ -35,7 +35,7 @@
                         <td class="option-links">
                             <a href="#">Edit</a>
                             |
-                            <a href="#">Detail</a>
+                            <a href="/siswa/show/{{ $siswa->id }}">Detail</a>
                             |
                             <a href="/siswa/delete/{{ $siswa->id }}" onclick="return confirm('yakin ingin di hapus')">Delete</a>
                         </td>
