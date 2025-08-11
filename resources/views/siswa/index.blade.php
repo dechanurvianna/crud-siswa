@@ -33,7 +33,7 @@
                         <td>{{ $siswa->nisn }}</td>
                         <td>{{ $siswa->alamat }}</td>
                         <td class="option-links">
-                            <a href="#">Edit</a>
+                            <a href="/siswa/edit/{{ $siswa->id }}">Edit</a>
                             |
                             <a href="/siswa/show/{{ $siswa->id }}">Detail</a>
                             |
