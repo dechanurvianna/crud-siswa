@@ -10,8 +10,8 @@
         <h1>Tambah Data Siswa</h1>
         <a href="/">Kembali</a>
         <br>
-        <img width="70" src="{{ asset('storage/'. $datauser->photo) }}"
-        <form action="/siswa/store" method="post" enctype="multipart/form-data" >
+        <img width="70" src="{{ asset('storage/'. $datauser->photo) }}">
+        <form action="/siswa/update/{{$datauser->id}}" method="post" enctype="multipart/form-data" >
         @csrf
     <br>
         <label for="">Kelas</label>
@@ -22,9 +22,9 @@
             @endforeach
     </select><br>
     @error('kelas_id')
-        <email style="color:red">{{ $message }}</email>
+        <small style="color:red">{{ $message }}</smalll>
     @enderror
-    
+
     </div>
     </br>
     <div>
@@ -92,4 +92,3 @@
     <div>
     </body>
     </html>
-    

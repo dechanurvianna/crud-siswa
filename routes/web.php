@@ -14,3 +14,5 @@ Route::get('/siswa/delete/{id}', [SiswaController::class, 'destroy'])->name('sis
 Route::get('/siswa/show/{id}', [SiswaController::class, 'show'])->name('siswa.show');
 
 Route::get('/siswa/edit/{id}', [SiswaController::class, 'edit'])->name('siswa.edit');
+
+Route::post('/siswa/update/{id}', [SiswaController::class, 'update']);
