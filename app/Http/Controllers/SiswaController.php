@@ -117,6 +117,21 @@ class SiswaController extends Controller
             'no_handphone'  =>$request-> no_handphone,
          ];
 
+         // cek apakah user merubah password atau tidak
+         if ($request->password !=null) {
+            $datasiswa_update['password'] = $request->password;
+         }
+
+        // cek apakah user mengubah gambar atau tidak
+                 if ($request->hasFile('photo')) {
+        // hapus gambar lama kalau ada
+                if ($datauser->photo) {
+                Storage::disk('public')->delete($datauser->photo);
+         }
+        // upload gambar baru
+                $datasiswa_update['photo'] = $request->file('photo')->store('profilesiswa', 'public');
+        }
+
         // update data sesuai data siswa / user yang sudah di siapkan
         $datauser->update($datasiswa_update);
 
