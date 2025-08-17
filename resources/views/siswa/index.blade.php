@@ -9,8 +9,8 @@
 <body>
     <div class="container">
         <h1>Halaman Beranda</h1>
-
         <div class="list-data-siswa">
+             <a href="{{ url('clas') }}">Menu kelas</a>
             <h2>List Data Siswa</h2>
             <a href="siswa/create">Tambah</a>
             <table border="1">
@@ -25,11 +25,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($siswas as $siswa)
+
                     <tr>
+                     @foreach ($siswas as $siswa)
                         <td><img src="{{ asset('storage/' . $siswa->photo) }}" alt="" width="40"></td>
                         <td>{{ $siswa->name }}</td>
-                        <td>{{ $siswa->Clas->name }}</td>
+                        <td>{{ optional($siswa->clas)->name }}</td>
                         <td>{{ $siswa->nisn }}</td>
                         <td>{{ $siswa->alamat }}</td>
                         <td class="option-links">
@@ -39,8 +40,8 @@
                             |
                             <a href="/siswa/delete/{{ $siswa->id }}" onclick="return confirm('yakin ingin di hapus')">Delete</a>
                         </td>
+                        @endforeach
                     </tr>
-                    @endforeach
                 </tbody>
             </table>
         </div>

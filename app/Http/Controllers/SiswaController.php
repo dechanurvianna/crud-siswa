@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class SiswaController extends Controller
 {
     public function index() {
-        $siswas = User::all();
+        $siswas = User::with('clas')->get();
         return view('siswa.index', compact('siswas'));
     }
     public function create() {
@@ -123,7 +123,7 @@ class SiswaController extends Controller
          }
 
         // cek apakah user mengubah gambar atau tidak
-                 if ($request->hasFile('photo')) {
+                if ($request->hasFile('photo')) {
         // hapus gambar lama kalau ada
                 if ($datauser->photo) {
                 Storage::disk('public')->delete($datauser->photo);
