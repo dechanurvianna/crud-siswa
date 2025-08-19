@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Kelas Baru</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
+@extends('layouts.app')
+@section('title')
+    <title>Create Clas</title>
+@endsection
+@section('content')
     <div class="container">
         <h1>Tambah Kelas Baru</h1>
         <a href="{{ url('/clas') }}">Kembali</a>
@@ -24,5 +20,4 @@
             <button type="submit">Simpan</button>
         </form>
     </div>
-</body>
-</html>
+@endsection

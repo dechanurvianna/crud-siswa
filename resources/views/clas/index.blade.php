@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Kelas</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+@extends('layouts.app')
+@section('title')
+    <title>Index Clas</title>
+@endsection
+@section('content')
     <div class="container">
         <a href="{{ url('/siswa') }}">Menu Siswa</a>
         <a href="{{ url('/kelas') }}">Menu Kelas</a>
@@ -50,5 +46,4 @@
             </table>
         </div>
     </div>
-</body>
-</html>
+@endsection

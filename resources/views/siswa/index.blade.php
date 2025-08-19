@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Beranda</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+@extends('layouts.app')
+@section('title')
+        <title>Index Siswa</title>
+@endsection
+@section('content')
     <div class="container">
         <h1>Halaman Beranda</h1>
         <div class="list-data-siswa">
@@ -46,5 +42,4 @@
             </table>
         </div>
     </div>
-</body>
-</html>
+@endsection

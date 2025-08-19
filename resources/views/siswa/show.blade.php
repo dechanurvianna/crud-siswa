@@ -1,12 +1,8 @@
-<DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Show siswa</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('title')
+    <title>Show Siswa</title>
+@endsection
+@section('content')
     <h1> Detail Siswa </h1>
 
     {{-- profile siswa --}}
@@ -26,5 +22,4 @@
 
     {{-- no_handphone siswa --}}
     <h6>{{ $datauser->no_handphone }}</h6>
-</body>
-</html>
+@endsection

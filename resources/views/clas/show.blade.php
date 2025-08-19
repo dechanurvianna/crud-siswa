@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Kelas</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('title')
+    <title>Show Clas</title>
+@endsection
+@section('content')
     <h1>Detail Kelas</h1>
 
     {{-- Nama kelas --}}
@@ -16,5 +13,4 @@
 
     {{-- Tombol kembali --}}
     <a href="{{ url('/clas') }}">Kembali</a>
-</body>
-</html>
+@endsection
